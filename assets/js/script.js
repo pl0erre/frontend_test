@@ -5,19 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const randTabNr = Math.floor(Math.random() * 2);
     
     // Select a random Tab after Pageload
-    tabs[randTabNr].className= "tab tab_selected";
+    tabs[randTabNr].className= "tab active";
 
-    // Add eventlisteners to Tabs and add or remove "tab_selected" class on click
+    // Add eventlisteners to Tabs and add or remove "active" class on click
     for (let i = 0; i < tabs.length; i++) {
-        tabs[i].addEventListener("click", (event) => {
-            let elem = event.target;
-    
-            if(!elem.classList.contains("tab_selected")) {
-                elem.className = "tab tab_selected"
-            } else if (elem.classList.contains("tab_selected")) {
-                elem.className = "tab";
-            }
+
+        tabs[i].addEventListener("click", (e) => {
+            let elem = e.target;
+            let classList = elem.classList
+
+            if (!classList.contains("active")) {
+                // Clear all active tabs
+                for ( let j = 0; j < tabs.length; j++) {
+                    tabs[j].classList.remove("active");
+                }
+                // Add active class to selected tab
+                classList.add("active");
+            } 
         })
+
     }
 
 

@@ -93,7 +93,7 @@ a {
     cursor: pointer;
 }
 
-.tab_selected {
+.active {
     background-color: white;
     color: black;
     padding: 10px 0px;
