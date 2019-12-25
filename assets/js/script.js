@@ -27,15 +27,11 @@ let eventsData =
         subheading: "Krebs der Speiseröhre",
         heading: "Treffen der Selbsthilfegruppe Speiseröhrenerkrankungen",
         text: `Das nächste Treffen der Selbsthilfegruppe Speiseröhrenerkrankungen findet am 7. Januar 2020 statt.
-
-                Veranstaltungsort:
-                Uniklinik Köln
-                Chirurgische Klinik im Hauptgebäude (Bettenhaus)
-                Ebene 0, Seminarraum 150
-
-                Save the date!
-
-                `
+            Veranstaltungsort:
+            Uniklinik Köln
+            Chirurgische Klinik im Hauptgebäude (Bettenhaus)
+            Ebene 0, Seminarraum 150
+            Save the date!`
     }, {
         date: "",
         time: "",
@@ -51,10 +47,6 @@ let eventsData =
         heading: "",
         text: ""
     }]
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => { 
 
