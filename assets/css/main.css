@@ -39,7 +39,7 @@ h2 {
 h3 {
     font-size: 1.1rem;
     color: #2876BA;
-    font-weight: 400;
+    font-weight: 400; /*to check for edge*/
     margin: 10px 0;
 }
 
@@ -209,11 +209,11 @@ h4 {
 }
 
 .noselect {
-    -webkit-touch-callout: none;
+    /* -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
+    -ms-user-select: none; */
     user-select: none; 
 }
 /* Utility classes -END- */
