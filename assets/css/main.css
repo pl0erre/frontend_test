@@ -76,12 +76,12 @@ h4 {
 
 .header {
     grid-area: header;
-    background-color: 	#be9e9e;
+    background-color: 	#bed5ea;
 }
 
 .page {
     grid-area: page;
-    background-color: 	#dddddd;
+    background-color: 	#f3f3f3;
 
 }
 
@@ -94,7 +94,7 @@ h4 {
 
 .sidebar {
     grid-area: sidebar;
-    background-color: 	#a0a0a0;
+    background-color: 	#1c5282;
 }
 
 .footer {
@@ -229,6 +229,10 @@ h4 {
         "sidebar sidebar sidebar sidebar sidebar"
         "footer footer footer footer footer"
         "copyright copyright copyright copyright copyright"
+    }
+    .page {
+        padding: 20px;
+        font-size: 1.2rem;
     }
 }
 
