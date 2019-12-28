@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // -- Constants -- //
     const numberOfInfoPreviews = 3;
     const numberOfTabs = 2;
-    const seeMoreMsg = "Mehr Informationen"
-    const backupImgUrl = "https://cdn1.iconfinder.com/data/icons/hawcons/32/699055-icon-65-document-image-512.png"
     const tabs = document.getElementsByClassName("tab");
     const news = tabs[0];
     const events = tabs[1];
+    const seeMoreMsg = "Mehr Informationen"
+    const backupImgUrl = "https://image.flaticon.com/icons/png/512/507/507626.png"
     const infoParCont = document.getElementsByClassName("infobar__content")[0];
 
     // -- Functions -- //
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // write content of selected feed
     function writeActiveContent(infoChild) {
         let infoBox = document.createElement("div");
-        let imgElem = document.createElement("img");
+        let imgElem = document.createElement("div");
         let infoItem = document.createElement("div");
         let dateElem = document.createElement("p");
         let headingElem = document.createElement("h3");
@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
         infoBox.classList.add("infobar__details")
         // Check if image url is given; if not: use default src
         if (infoChild.img) {
-            imgElem.src = infoChild.img;
+            imgElem.style.backgroundImage = `url(${infoChild.img})`;
         } else {
-            imgElem.src = backupImgUrl;
+            imgElem.style.backgroundImage = `url(${backupImgUrl})`;
         }
         // add link Url
         seeMoreElem.href = "#"
@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // clear all active tabs of infobar
     function clearActiveTabs() {
-        for ( let j = 0; j < tabs.length; j++) {
-            tabs[j].classList.remove("active");
+        for ( let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
         }
     }
 
@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearOldContent();
             // load content
             loadActiveContent();
-
         })
     }
     // load random tab on pageload
