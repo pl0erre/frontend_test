@@ -35,7 +35,7 @@ const newsData =
 // Data for Eventfeed
 const eventsData = 
     [{
-        img: "",
+        img: "https://cdn.pixabay.com/photo/2013/07/18/10/55/dna-163466_960_720.jpg",
         date: "09.01.2020",
         time: "16:00 Uhr",
         category: "Fachgebiet: Kardiologie",
@@ -60,7 +60,7 @@ const eventsData =
         50931 Cologne
         `
     }, {
-        img: "",
+        img: "https://cdn.pixabay.com/photo/2017/04/07/15/21/heart-2211180_960_720.jpg",
         date: "10.01.2020 - 11.01.2020",
         time: "",
         category: "Fachgebiet: Radiologie , Pathologie , Kardiologie",
@@ -79,7 +79,7 @@ const eventsData =
         Für diese Veranstaltung wurde die CME-Zertifizierung bei der Ärztekammer Nordrhein beantragt.
         `
     }, {
-        img: "",
+        img: "https://cdn.pixabay.com/photo/2016/10/14/12/03/doctor-1740044_960_720.jpg",
         date: "10.01.2020",
         time: "07:15 - 08:00 Uhr",
         category: "Fachgebiet: Orthopädie und Unfallchirurgie",
