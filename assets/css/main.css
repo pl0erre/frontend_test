@@ -1,27 +1,21 @@
-/* Imports */
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&display=swap');
-
 /* === Basic Definitions === */
-* {
-    padding: 0;
-    margin: 0;
-}
-
 html, body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 20px;
 }
 
 a {
-    color: black;
+    color: rgb(0,0,0);
     text-decoration: none;
 }
 
 a:visited {
-    color: black;
+    color: rgb(0,0,0);
 }
 
 a:hover {
@@ -30,10 +24,12 @@ a:hover {
 
 h1 {
     font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
 h3 {
@@ -45,7 +41,6 @@ h3 {
 
 h4 {
     margin: 5px 0;
-    color: black;
     font-size: 0.8rem;
     font-weight: 300;
 }
@@ -96,6 +91,7 @@ h4 {
     grid-area: infoBar;
     margin: 10px;  
     max-height: 600px;
+
 }
 
 .sideBar {
@@ -125,7 +121,7 @@ h4 {
     flex-direction: row;
     justify-content: space-between;
     padding: 5px;
-    background: rgba(234, 231, 220, 0.7)
+    background: rgb(221, 221, 221)
 }
 
 .header__navMenu {
@@ -155,7 +151,9 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: lightgrey;
+    -webkit-box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.335);
+    -moz-box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.335);
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.335);
 }
 
 .infoBar__nav {
@@ -170,8 +168,9 @@ h4 {
 
 .tab {
     min-width: 100px;
+    margin: 0;   
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.644);
+    background-color: rgba(255, 255, 255, 0.466);
     color: white;
     font-size: 0.9rem;
     text-align: center;
@@ -231,18 +230,21 @@ h4 {
 
 /* === Utility classes === */
 .link-arrow {
+    /* styling of arrow for links */
     color: #2876BA;
     font-size: 1.5rem;
     font-weight: 900;
 }
 
 .active {
+    /* active tab in infoBar */
     background-color: white;
     color: black;
     padding: 10px;
 }
 
 .noselect {
+    /* text cannot be selected */
     user-select: none;
 }
 /* === Utility classes === -END- */
@@ -252,7 +254,7 @@ h4 {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .grid-container {
         grid-template-columns: repeat(5, 20%);
-        grid-template-rows: minmax(20vh, auto) repeat(3, auto) minmax(30vh, auto) minmax(5vh, auto);
+        grid-template-rows: minmax(40vh, auto) repeat(3, auto) minmax(30vh, auto) minmax(5vh, auto);
         grid-template-areas:
             "header header header header header"
             "infoBar infoBar infoBar infoBar sideBar"
@@ -284,7 +286,7 @@ h4 {
 @media screen and (max-width: 767px) {
     .grid-container {
         grid-template-columns: repeat(5, 20%);
-        grid-template-rows: minmax(20vh, auto) auto minmax(40vh, auto) auto minmax(40vh, auto) minmax(5vh, auto);
+        grid-template-rows: minmax(40vh, auto) auto minmax(40vh, auto) auto minmax(40vh, auto) minmax(5vh, auto);
         grid-template-areas:
             "header header header header header"
             "infoBar infoBar infoBar infoBar infoBar"
@@ -292,10 +294,6 @@ h4 {
             "page page page page page"
             "footer footer footer footer footer"
             "copyright copyright copyright copyright copyright"
-    }
-
-    body {
-        font-size: 18px;
     }
 
     .header__navBurgerMenu {
