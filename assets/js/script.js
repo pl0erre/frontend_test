@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headingElem.innerHTML = infoChild.heading;
         subheadingElem.innerHTML = infoChild.subheading;
         seeMoreElem.innerHTML = settings.seeMoreMsg;
-        // construct InfoItem
+        // build infoItem
         infoItem.appendChild(imgElem);
         infoItem.appendChild(infoBox);
         infoBox.appendChild(dateElem);
