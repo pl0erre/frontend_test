@@ -142,13 +142,11 @@ h4 {
 /* Header -END- */
 
 .page p {
-    max-width: 700px;
+    max-width: 800px;
 }
 
 /* InfoBar */
 .infoBar__container {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -157,7 +155,7 @@ h4 {
 
 .infoBar__nav {
     height: 60px;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -201,7 +199,6 @@ h4 {
     border-bottom: 1px solid lightgrey;
 }
 
-
 .infoBar__image {
     height: 100px;
     min-width: 130px;
@@ -211,7 +208,7 @@ h4 {
     margin-right: 20px;
 }
 
-.infoBar__details>p {
+.infoBar__details > p {
     font-size: 0.8rem;
 }
 
@@ -267,12 +264,15 @@ h4 {
         padding: 20px;
         font-size: 1.2rem;
     }
-    .page p {
-        max-width: 800px;
-    }
 
     .infoBar {
-        padding: 0px;
+        padding: 0;
+        max-height: none;
+    }
+
+    .infoBar__image {
+        height: 150px;
+        min-width: 220px;
     }
 }
 
@@ -299,5 +299,24 @@ h4 {
 
     .infoBar {
         padding: 0;
+        margin: 0;
+        max-height: none;
     }
+
+    .infoBar__item {
+        flex-direction: column;
+        /* align-items: flex-start; */
+    }
+
+    .infoBar__details {
+        margin: 12px 0;
+        text-align: center;
+    }
+    .infoBar__image {
+        height: 150px;
+        min-width: 300px;
+        margin: 0;
+    }
+
+
 }
