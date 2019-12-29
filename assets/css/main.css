@@ -1,4 +1,4 @@
-/* Imports */ 
+/* Imports */
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&display=swap');
 
 /* Basic Definitions */
@@ -7,12 +7,13 @@
     margin: 0;
 }
 
-html, body {
-    overflow-x: hidden;
-    font-family: 'Merriweather Sans',sans-serif;
-    font-size: 16px;
+html,
+body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
 }
 
 a {
@@ -20,7 +21,7 @@ a {
     text-decoration: none;
 }
 
-a:visited { 
+a:visited {
     color: black;
 }
 
@@ -37,18 +38,19 @@ h2 {
 }
 
 h3 {
-    font-size: 1.1rem;
-    color: #2876BA;
-    font-weight: 400; /*to check for edge*/
     margin: 10px 0;
+    color: #2876BA;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 h4 {
-    font-size: 0.9rem;
-    color: black;
-    font-weight: 300;    
     margin: 5px 0;
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 300;
 }
+
 /* Basic Definitions -END- */
 
 /* GRID */
@@ -58,92 +60,117 @@ h4 {
     min-height: 100vh;
     display: grid;
     grid-template-columns: minmax(450px, 25%) repeat(3, auto) minmax(150px, 10%);
-    grid-template-rows: minmax(20vh, auto) repeat(3,minmax(30vh, auto)) minmax(300px, auto) 5%;
+    grid-template-rows: minmax(20vh, auto) repeat(3, minmax(30vh, auto)) minmax(300px, auto) 5%;
     grid-template-areas:
-    "header header header header header"
-    "newsbar page page page sidebar"
-    "newsbar page page page sidebar"
-    "newsbar page page page sidebar"
-    "footer footer footer footer footer"
-    "copyright copyright copyright copyright copyright"
+        "header header header header header"
+        "infoBar page page page sideBar"
+        "infoBar page page page sideBar"
+        "infoBar page page page sideBar"
+        "footer footer footer footer footer"
+        "copyright copyright copyright copyright copyright"
 }
 
 .grid-item {
-    /* border: 1px solid black; */
     width: 100%;
     box-sizing: border-box;
 }
 
 .header {
     grid-area: header;
-    background-color: 	#bed5ea;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #bed5ea;
 }
 
 .page {
     grid-area: page;
-    background-color: 	#f3f3f3;
-
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    padding: 50px;
+    text-align: justify;
 }
 
-.infobar {
-    grid-area: newsbar;
-    background-color: 	white;
+.infoBar {
+    grid-area: infoBar;
+    background-color: white;
     padding: 10px;
     max-height: 600px;
 }
 
-.sidebar {
-    grid-area: sidebar;
-    background-color: 	#1c5282;
+.sideBar {
+    grid-area: sideBar;
+    background-color: #1c5282;
 }
 
 .footer {
     grid-area: footer;
-    background-color: 	#666666;
+    background-color: #666666;
 }
 
 .copyright {
     grid-area: copyright;
-    background-color: 	#464646;
+    background-color: #464646;
 }
 
 /* GRID -END- */
 
-/* page content */ 
-.page {
+/* Header */
+.header__navBar {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    text-align: justify;
-    padding: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    background: rgba(234, 231, 220, 0.7)
 }
 
-.infobar__container {
+.header__navMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header__navMenu>a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Header -END- */
+
+/* InfoBar */
+.infoBar__container {
     width: 100%;
     height: 100%;
-    background-color: lightgrey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: lightgrey;
 }
 
-.infobar__nav {
+.infoBar__nav {
     height: 60px;
     width: 100%;
-    background-color: #2876BA;
-    padding: 0 10px;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     box-sizing: border-box;
+    padding: 0 10px;
+    background-color: #2876BA;
 }
 
 .tab {
-    font-size: 0.9rem;
-    color: white;
-    text-align: center;
     min-width: 100px;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.644);
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -151,55 +178,56 @@ h4 {
     color: #2876BA;
 }
 
-.infobar__content {
+.infoBar__content {
     height: 100%;
-    background-color: white;
-    margin: 0 4px 4px 4px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    box-sizing: border-box;
+    background-color: white;
+    margin: 0 4px 4px 4px;
 }
 
-.infobar__item {
+.infoBar__item {
     width: 90%;
     display: flex;
     align-items: center;
 }
 
 
-.infobar__image {
-    min-width: 130px;
+.infoBar__image {
     height: 100px;
+    min-width: 130px;
     background-size: cover;
     background-position: center;
     border: 3px solid lightgrey;
     margin-right: 20px;
 }
 
-.infobar__details > p{
+.infoBar__details>p {
     font-size: 0.8rem;
 }
 
-.infobar__more {
+.infoBar__more {
     height: 70px;
-    background-color: white;
-    margin: 0 4px 4px 4px;
-    padding-right: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    background-color: white;
+    margin: 0 4px 4px 4px;
+    padding-right: 10px;   
 }
 
+/* InfoBar -END- */
 
 /* Utility classes*/
 .link-arrow {
+    color: #2876BA;
     font-size: 1.5rem;
     font-weight: 900;
-    color: #2876BA;
 }
 
 .active {
@@ -214,8 +242,9 @@ h4 {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none; */
-    user-select: none; 
+    user-select: none;
 }
+
 /* Utility classes -END- */
 
 /* MEDIA-QUERIES */
@@ -225,13 +254,14 @@ h4 {
         grid-template-columns: 25vw repeat(3, auto) 10vw;
         grid-template-rows: minmax(20vh, auto) repeat(3, auto) minmax(20vh, auto) 5%;
         grid-template-areas:
-        "header header header header header"
-        "newsbar newsbar page page page"
-        "newsbar newsbar page page page"
-        "sidebar sidebar sidebar sidebar sidebar"
-        "footer footer footer footer footer"
-        "copyright copyright copyright copyright copyright"
+            "header header header header header"
+            "infoBar infoBar page page page"
+            "infoBar infoBar page page page"
+            "sideBar sideBar sideBar sideBar sideBar"
+            "footer footer footer footer footer"
+            "copyright copyright copyright copyright copyright"
     }
+
     .page {
         padding: 20px;
         font-size: 1.2rem;
@@ -243,11 +273,11 @@ h4 {
         grid-template-columns: repeat(5, 20%);
         grid-template-rows: 30% auto auto auto minmax(200px, auto) 5%;
         grid-template-areas:
-        "header header header header header"
-        "newsbar newsbar newsbar newsbar newsbar"
-        "page page page page page"
-        "sidebar sidebar sidebar sidebar sidebar"
-        "footer footer footer footer footer"
-        "copyright copyright copyright copyright copyright"
+            "header header header header header"
+            "infoBar infoBar infoBar infoBar infoBar"
+            "page page page page page"
+            "sideBar sideBar sideBar sideBar sideBar"
+            "footer footer footer footer footer"
+            "copyright copyright copyright copyright copyright"
     }
 }

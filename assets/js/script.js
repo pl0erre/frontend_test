@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => { 
 
     // -- Constants -- //
-    const numberOfInfoPreviews = 3;
-    const numberOfTabs = 2;
+    const infoParCont = document.getElementsByClassName("infoBar__content")[0];
     const tabs = document.getElementsByClassName("tab");
-    const news = tabs[0];
-    const events = tabs[1];
-    const seeMoreMsg = "Mehr Informationen"
-    const backupImgUrl = "https://image.flaticon.com/icons/png/512/507/507626.png"
-    const infoParCont = document.getElementsByClassName("infobar__content")[0];
+    const settings = {
+        nrOfPreviews: 3,
+        nrOfTabs: 2,
+        newsTab: tabs[0],
+        eventsTab: tabs[1],
+        seeMoreMsg: "Mehr Informationen",
+        defaultImg: "https://image.flaticon.com/icons/png/512/507/507626.png"
+    }
 
     // -- Functions -- //
     // Select a random Tab after Pageload
     function selectRandomTab() {
-        tabs[Math.floor(Math.random() * numberOfTabs)].classList.add("active");
+        tabs[Math.floor(Math.random() * settings.nrOfTabs)].classList.add("active");
         loadActiveContent();
     }
 
@@ -27,14 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let subheadingElem = document.createElement("h4");
         let seeMoreElem = document.createElement("a");
         // add classes
-        infoItem.classList.add("infobar__item");
-        imgElem.classList.add("infobar__image");
-        infoBox.classList.add("infobar__details")
+        infoItem.classList.add("infoBar__item");
+        imgElem.classList.add("infoBar__image");
+        infoBox.classList.add("infoBar__details")
         // Check if image url is given; if not: use default src
         if (infoChild.img) {
             imgElem.style.backgroundImage = `url(${infoChild.img})`;
         } else {
-            imgElem.style.backgroundImage = `url(${backupImgUrl})`;
+            imgElem.style.backgroundImage = `url(${settings.defaultImg})`;
         }
         // add link Url
         seeMoreElem.href = "#"
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dateElem.innerHTML = infoChild.date;
         headingElem.innerHTML = infoChild.heading;
         subheadingElem.innerHTML = infoChild.subheading;
-        seeMoreElem.innerHTML = seeMoreMsg;
+        seeMoreElem.innerHTML = settings.seeMoreMsg;
         // construct InfoItem
         infoItem.appendChild(imgElem);
         infoItem.appendChild(infoBox);
@@ -64,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // load content for selected feed
     function loadActiveContent() {
         // load news content if news tab is selected
-        if (news.classList.contains("active")) {
-            for (let i = 0; i < numberOfInfoPreviews; i++) {
+        if (settings.newsTab.classList.contains("active")) {
+            for (let i = 0; i < settings.nrOfPreviews; i++) {
                 let  j = newsData[i];
                 let infoChild = {
                     img: j.img,
@@ -77,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 writeActiveContent(infoChild);  
             }
         // load events if event tab is selected
-        } else if (events.classList.contains("active")) {
-            for (let i = 0; i < numberOfInfoPreviews; i++) {
+        } else if (settings.eventsTab.classList.contains("active")) {
+            for (let i = 0; i < settings.nrOfPreviews; i++) {
                 let  j = eventsData[i];
                 let infoChild = {
                     date: j.date,
