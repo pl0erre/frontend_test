@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => { 
 
-    // === Constants === //
+// === Constants === //
     const infoParCont = document.getElementsByClassName("infoBar__content")[0];
     const tabs = document.getElementsByClassName("tab");
     const settings = {
@@ -11,9 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
         seeMoreMsg: `<span class="link-arrow">&#8250</span> Mehr Informationen`,
         defaultImg: "https://image.flaticon.com/icons/png/512/507/507626.png"
     }
-    // === Constants === -END- //
 
-    // === Functions === //
+// === Functions === //
+    // load content for selected feed
+    function loadActiveContent() {
+        if (settings.newsTab.classList.contains("active")) {
+            fetchActiveData(newsData);
+        } else if (settings.eventsTab.classList.contains("active")) {
+            fetchActiveData(eventsData);
+        } 
+    }
     // fetch data according to selected tab
     function fetchActiveData(activeTab) {
         for (let i = 0; i < settings.nrOfPreviews; i++) {
@@ -32,16 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
             writeActiveContent(infoItemData);  
         }
     }
-
-    // load content for selected feed
-    function loadActiveContent() {
-        if (settings.newsTab.classList.contains("active")) {
-            fetchActiveData(newsData);
-        } else if (settings.eventsTab.classList.contains("active")) {
-            fetchActiveData(eventsData);
-        } 
-    }
-
     // write content of selected feed
     function writeActiveContent(infoItemData) {
         // create all necessary elements
@@ -75,21 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // append infoItem
         infoParCont.appendChild(infoItem);
     }
-
     // clear all content of selected feed; remove all childelements
     function clearOldContent() {
         while (infoParCont.firstChild) {
             infoParCont.removeChild(infoParCont.firstChild);
         }
     }
-
     // clear all active tabs of infobar
     function clearActiveTabs() {
         for ( let i = 0; i < tabs.length; i++) {
             tabs[i].classList.remove("active");
         }
     }
-
     // Add eventlisteners to Infobar tabs and add or remove "active" class on click
     function addEventlistenersToTabs() {
         for (let i = 0; i < tabs.length; i++) {
@@ -107,15 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
     }
-
     // Select a random Tab after Pageload
     function selectRandomTab() {
         tabs[Math.floor(Math.random() * settings.nrOfTabs)].classList.add("active");
         loadActiveContent();
     }
 
-    // === Functions === -END- //
-
+// === Run on Pageload === //
     // Execute eventlisteners function
     addEventlistenersToTabs();
     // Execute random Tab function
