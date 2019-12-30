@@ -19,7 +19,7 @@ a:visited {
 }
 
 a:hover {
-    color: #2876BA;
+    color: rgb(40, 118, 168);
 }
 
 h1 {
@@ -34,7 +34,7 @@ h2 {
 
 h3 {
     margin: 10px 0;
-    color: #2876BA;
+    color: rgb(40, 118, 168);
     font-size: 1rem;
     font-weight: 400;
 }
@@ -45,6 +45,12 @@ h4 {
     font-weight: 300;
 }
 
+h5 {
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255)
+}
+
 /* === Basic Definitions === -END- */
 
 /* === GRID === */
@@ -52,7 +58,7 @@ h4 {
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    background-color: #f3f3f3;  
+    background-color: rgb(243, 243, 243);
     display: grid;
     grid-template-columns: minmax(500px, 25%) repeat(3, auto) 200px;
     grid-template-rows: minmax(20vh, auto) repeat(3, auto) minmax(300px, auto) 5%;
@@ -74,8 +80,9 @@ h4 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    background-color: #bed5ea;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(190, 213, 234);
 }
 
 .page {
@@ -96,24 +103,37 @@ h4 {
 
 .sideBar {
     grid-area: sideBar;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin: 10px;  
-    background-color: #1c5282;
+    background-color: rgb(28, 82, 130);
 }
 
 .footer {
     grid-area: footer;
-    background-color: #666666;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(102, 102, 102);
 }
 
 .copyright {
     grid-area: copyright;
-    background-color: #464646;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    background-color: rgb(70, 70, 70);
 }
 
 /* === GRID === -END- */
 
 /* === Regular Definitions === */
-/* = Header = */
+    /* = Header = */
 .header__navBar {
     width: 100%;
     box-sizing: border-box;
@@ -141,19 +161,19 @@ h4 {
     margin: 0 15px;
 }
 
-/* = Page = */
+    /* = Page = */
 .page p {
     max-width: 800px;
 }
 
-/* = InfoBar = */
+    /* = InfoBar = */
 .infoBar__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    -webkit-box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.335);
-    -moz-box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.335);
-    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.335);
+    -webkit-box-shadow: 2px 4px 15px rgb(100, 100, 100);
+    -moz-box-shadow: 2px 4px 15px rgb(100, 100, 100);
+    box-shadow: 2px 4px 15px rgb(100, 100, 100);
 }
 
 .infoBar__nav {
@@ -163,7 +183,7 @@ h4 {
     align-items: flex-end;
     box-sizing: border-box;
     padding: 0 10px;
-    background-color: #2876BA;
+    background-color: rgb(40, 118, 168);
 }
 
 .tab {
@@ -171,14 +191,14 @@ h4 {
     margin: 0;   
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.466);
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 0.9rem;
     text-align: center;
     cursor: pointer;
 }
 
 .tab:hover {
-    color: #2876BA;
+    color: rgb(40, 118, 168);
 }
 
 .infoBar__content {
@@ -188,7 +208,7 @@ h4 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin: 0 4px 4px 4px;
 }
 
@@ -199,7 +219,7 @@ h4 {
     flex: 1;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid rgb(211, 211, 211);
 }
 
 .infoBar__image {
@@ -207,7 +227,7 @@ h4 {
     min-width: 130px;
     background-size: cover;
     background-position: center;
-    border: 3px solid lightgrey;
+    border: 3px solid rgb(211, 211, 211);
     margin-right: 20px;
 }
 
@@ -222,7 +242,7 @@ h4 {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin: 0 4px 4px 4px;
     padding-right: 10px;   
 }
@@ -231,15 +251,15 @@ h4 {
 /* === Utility classes === */
 .link-arrow {
     /* styling of arrow for links */
-    color: #2876BA;
+    color: rgb(40, 118, 168);
     font-size: 1.5rem;
     font-weight: 900;
 }
 
 .active {
     /* active tab in infoBar */
-    background-color: white;
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 10px;
 }
 
@@ -250,7 +270,7 @@ h4 {
 /* === Utility classes === -END- */
 
 /* === MEDIA-QUERIES === */
-/* = Tablet = */
+    /* = Tablet = */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .grid-container {
         grid-template-columns: repeat(5, 20%);
@@ -282,7 +302,8 @@ h4 {
         min-width: 220px;
     }
 }
-/* = Mobile = */
+
+    /* = Mobile = */
 @media screen and (max-width: 767px) {
     .grid-container {
         grid-template-columns: repeat(5, 20%);
